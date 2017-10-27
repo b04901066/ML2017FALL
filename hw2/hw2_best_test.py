@@ -11,13 +11,13 @@ from keras.optimizers import SGD
 x_test = pandas.read_csv(sys.argv[1]).values.astype(numpy.float)
 
 # 0~1
-_max = numpy.load('train_max.npy')
-_min = numpy.load('train_min.npy')
+_max = numpy.load('./train_max.npy')
+_min = numpy.load('./train_min.npy')
 for i in range(x_test.shape[1]):
     if ( _max[i] - _min[i] ) != 0:
         x_test[:,i] = ( x_test[:,i] - _min[i] ) / ( _max[i] - _min[i] )
 
-model = load_model('hw2_best_model.h5')
+model = load_model('./hw2_best_model.h5')
 y = model.predict(x_test, batch_size=128)
 print(y)
 
