@@ -112,8 +112,8 @@ datagen.fit(X_train)
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 print(model.summary())
 for i in range(10):
-    model.fit_generator( datagen.flow(X_train[:6460], y_train[:6460], batch_size=64),
-                         steps_per_epoch=(X_train[:6460].shape[0] / 64), epochs=100+i*100, validation_data=test_datagen.flow(X_train[6460:], y_train[6460:], batch_size=64), validation_steps=(X_train[6460:].shape[0] / 64), initial_epoch=i*100)
+    model.fit_generator( datagen.flow(X_train[:22400], y_train[:22400], batch_size=64),
+                         steps_per_epoch=(X_train[:22400].shape[0] / 64), epochs=100+i*100, validation_data=test_datagen.flow(X_train[22400:], y_train[22400:], batch_size=64), validation_steps=(X_train[22400:].shape[0] / 64), initial_epoch=i*100)
     model.save('./TA'+str(100+i*100)+'.h5')
 #early_stopping = EarlyStopping(monitor='val_acc', patience=5)
 #checkpointer = ModelCheckpoint(filepath='./temp.h5', monitor='val_acc', verbose=1, save_best_only=True)
