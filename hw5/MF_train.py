@@ -23,10 +23,10 @@ in_U = Input( shape=(1,) )
 in_M = Input( shape=(1,) )
 
 # , embeddings_initializer='zeros'
-w_U = Flatten()( Embedding( max(train[:,0]), 10)( in_U ) )
-w_M = Flatten()( Embedding( max(train[:,1]), 10)( in_M ) )
-b_U = Flatten()( Embedding( max(train[:,0]),  1, embeddings_initializer='zeros')( in_U ) )
-b_M = Flatten()( Embedding( max(train[:,1]),  1, embeddings_initializer='zeros')( in_M ) )
+w_U = Flatten()( Embedding( max(train[:,0]) + 1, 10)( in_U ) )
+w_M = Flatten()( Embedding( max(train[:,1]) + 1, 10)( in_M ) )
+b_U = Flatten()( Embedding( max(train[:,0]) + 1,  1, embeddings_initializer='zeros')( in_U ) )
+b_M = Flatten()( Embedding( max(train[:,1]) + 1,  1, embeddings_initializer='zeros')( in_M ) )
 
 added = Dot(axes=1)( [w_U, w_M] )
 out = Add()( [added, b_U, b_M] )
