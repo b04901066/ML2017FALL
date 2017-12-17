@@ -23,13 +23,13 @@ in_U = Input( shape=(1,) )
 in_M = Input( shape=(1,) )
 
 # , embeddings_initializer='zeros'
-w_U = Flatten()( Embedding( max(train[:,0]) + 1, 16)( in_U ) )
-w_M = Flatten()( Embedding( max(train[:,1]) + 1, 16)( in_M ) )
+w_U = Flatten()( Embedding( max(train[:,0]) + 1, 10)( in_U ) )
+w_M = Flatten()( Embedding( max(train[:,1]) + 1, 10)( in_M ) )
 b_U = Flatten()( Embedding( max(train[:,0]) + 1,  1, embeddings_initializer='zeros')( in_U ) )
 b_M = Flatten()( Embedding( max(train[:,1]) + 1,  1, embeddings_initializer='zeros')( in_M ) )
 
 added = Concatenate()( [w_U, w_M] )
-added = Dense(300, activation='relu')(added)
+added = Dense(128, activation='relu')(added)
 added = Dropout(0.5)(added)
 added = Dense(1, activation='relu')(added)
 out = Add()( [added, b_U, b_M] )
