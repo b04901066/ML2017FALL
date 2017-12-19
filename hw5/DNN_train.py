@@ -29,7 +29,7 @@ b_U = Flatten()( Embedding( max(train[:,0]) + 1,  1, embeddings_initializer='zer
 b_M = Flatten()( Embedding( max(train[:,1]) + 1,  1, embeddings_initializer='zeros')( in_M ) )
 
 added = Concatenate()( [w_U, w_M] )
-added = Dense(128, activation='relu')(added)
+added = Dense(256, activation='relu')(added)
 added = Dropout(0.5)(added)
 added = Dense(1, activation='relu')(added)
 out = Add()( [added, b_U, b_M] )
