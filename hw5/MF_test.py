@@ -1,7 +1,7 @@
 import sys, csv, numpy, pandas
 import keras
 from keras.models import load_model
-model = load_model('model/mf8d.h5')
+model = load_model('model/mf10.h5')
 model.summary()
 test = pandas.read_csv( sys.argv[1], sep=',', dtype=int).values
 rating = model.predict( [test[:,1], test[:,2]], batch_size=128, verbose=1)
