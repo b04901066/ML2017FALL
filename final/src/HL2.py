@@ -2,7 +2,7 @@ import os, re, sys, csv, json, numpy, pandas, difflib
 from collections import OrderedDict
 from random import *
 
-window_size = 35
+window_size = 30
 
 # readin
 # testing_label.json  list.len=1450  
@@ -41,16 +41,3 @@ with open(sys.argv[2], 'w', newline='') as csvfile:
                 output = output[:-1]
                 ID = test_label['data'][paragra]['paragraphs'][conte]['qas'][qas]['id']
                 spamwriter.writerow([ ID, output])
-                print(output)
-'''
-                qas_list = list( jieba.cut(  ) )
-                q_len = len(qas_list)
-                for cword in range( len(con_list) ):
-                    if vocabulary.get(con_list[cword]) != None:
-                        X_test[samples][ max_qas + cword ] = vocabulary.get(con_list[cword])
-                    X_context[samples][ max_qas + cword ] = con_list[cword]
-                for word in range( len(qas_list) ):
-                    if vocabulary.get(qas_list[word]) != None:
-                        X_test[samples][ word + max_qas - q_len ] = vocabulary.get(qas_list[word])
-                    X_context[samples][ word + max_qas - q_len ] = qas_list[word]
-'''   
