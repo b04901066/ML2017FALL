@@ -4,7 +4,7 @@
 Run
 
     cd src
-    python3 HL2.py <path-to-test-v1.1.json>
+    python3 HL2.py <path-to-test-v1.1.json> <output.csv>
 
 ## R-Net
 ### Required packages
