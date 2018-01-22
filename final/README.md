@@ -1,5 +1,7 @@
 # ML2017 Fall Final
 ## library
+* pyTorch
+* jieba
 * numpy
 * pandas
 * Python Standard Lib
