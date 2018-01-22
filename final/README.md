@@ -2,6 +2,10 @@
 ## library
 * pyTorch
 * jieba
+* tensorboard_logger
+* tqdm
+* spacy
+* six
 * numpy
 * pandas
 * Python Standard Lib
