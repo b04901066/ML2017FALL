@@ -35,3 +35,5 @@ Run
     python main.py model.pt <path-to-test-v1.1.json>
 
 to generate output. The file `output-<date_time>.csv` is for uploading to Kaggle, and the file `text-<date_time>.csv` contains human-readable text.
+
+### Since we use random initialize in pointer network,the variance of the output might be high...
