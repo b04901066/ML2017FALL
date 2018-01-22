@@ -1,5 +1,5 @@
 # ML2017 Fall Final
-## library
+## library used in training
 * pyTorch
 * jieba
 * tensorboard_logger
