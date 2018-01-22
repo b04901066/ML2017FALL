@@ -1,4 +1,9 @@
 # ML2017 Fall Final
+## library
+* numpy
+* pandas
+* Python Standard Lib
+
 ## Sliding Window
 ### Test
 Run
